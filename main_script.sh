@@ -1,5 +1,5 @@
 #!/bin/bash
-mkdir  /data/emfisis_burst/wip/rablack75/rablack75/CountBurst/CSVs_flashBV2
+#mkdir  /data/emfisis_burst/wip/rablack75/rablack75/CountBurst/CSVs_flashBV2
 ## remove all data files and output from the hpc folders
 rm -rf /data/hpcflash/users/rablack75/data/L4/*
 rm -rf //data/hpcflash/users/rablack75/data/LANL/*
@@ -10,8 +10,8 @@ rm -rf /data/hpcflash/users/rablack75/data/Burst/*
 
 wait
 
-startdate="20160101"
-enddate="20160501"
+startdate="20130101"
+enddate="20140101"
 
 currdate=$startdate
 
@@ -29,7 +29,7 @@ while [[ "$currdate" < "$enddate" ]]; do
     SURVEYDATA='/data/spacecast/wave_database_v2/RBSP-B/L3/$year/*'
 
     ## copy over magnetometer and L4 data for the year 
-    scp -r /data/spacecast/wave_database_v2/RBSP-A/L3/$year/* /data/hpcflash/users/rablack75/data/magnetometer &
+    scp -r /data/spacecast/wave_database_v2/RBSP-B/L3/$year/* /data/hpcflash/users/rablack75/data/magnetometer &
     scp -r /data/spacecast/satellite/RBSP/emfisis/data/RBSP-B/L4/$year/* /data/hpcflash/users/rablack75/data/L4 &
     scp -r /data/emfisis_burst/wip/rablack75/rablack75/SLURM_outB/$year/* /data/hpcflash/users/rablack75/data/Burst &
 
